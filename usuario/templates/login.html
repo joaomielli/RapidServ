@@ -3,22 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Cadastro</title>
   </head>
+
   <body>
-    <form style="text-align: center">
+    <form action="{% url 'login' %}" method="POST">
+      {% csrf_token %}
       <input type="text" placeholder="Username..." name="username" />
       <br />
       <br />
-      <input type="text" placeholder="Email..." name="email" />
+      <input type="email" placeholder="Email..." name="email" />
       <br />
       <br />
       <input type="password" placeholder="Senha..." name="senha" />
       <br />
       <br />
-      <input type="Login" />
+      <input type="submit" value="Login">
       <br />
       <br />
     </form>
   </body>
-</html>
+</html
