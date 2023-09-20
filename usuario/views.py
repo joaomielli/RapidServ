@@ -3,8 +3,11 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as login_django
+<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 
+=======
+>>>>>>> 16d241078f97485c5785d81f25e3638e4bd67468
 
 def cadastro(request):
     if request.method == "GET":
@@ -31,6 +34,7 @@ def cadastro(request):
 
 
 def login(request):
+<<<<<<< HEAD
     if request.method == "GET":
         return render(request, "login.html")
     else:
@@ -48,3 +52,19 @@ def login(request):
 @login_required(login_url='/auth/login/')
 def buscar_servicos(request):
     return HttpResponse('Buscar Serviços')
+=======
+    if request.method == 'GET':
+        return render(request, "login.html")
+    else:
+        usuario = request.POST.get('username')
+        senha = request.POST.get('senha')
+
+        usuario = authenticate(username=usuario, password=senha)
+
+        if usuario:
+            login_django(request, usuario)
+            return HttpResponse('Autenticado')
+        else:
+            return HttpResponse('E-mail ou senha inválidos')
+
+>>>>>>> 16d241078f97485c5785d81f25e3638e4bd67468
