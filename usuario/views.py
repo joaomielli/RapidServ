@@ -21,9 +21,7 @@ def cadastro(request):
             print(f"usuario: {usuario}")
 
         usuario = User.objects.create_user(
-            username=username, 
-            email=email, 
-            password=senha
+            username=username, email=email, password=senha
         )
         usuario.save()
 
@@ -46,6 +44,6 @@ def login(request):
             return HttpResponse("Email ou senha inválidos")
 
 
-@login_required(login_url='/auth/login/')
+@login_required(login_url="/auth/login/")
 def buscar_servicos(request):
-    return HttpResponse('Buscar Serviços')
+    return HttpResponse("Buscar Serviços")
