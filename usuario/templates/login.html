@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'login/css/login.css' %}" />
+  <link rel="stylesheet" href="{% static 'login/login.css' %}" />
   <title>Login</title>
 </head>
 
@@ -14,7 +14,10 @@
   <div class="main-login">
     <div class="left-login">
       <h1>Faça login<br />Conecte seus talentos</h1>
-      <img src="{% static 'usuario/img/CAMINHAO.svg' %}" class="left-login-image" alt="Logo animação" />
+      <objecttype="image/svg+xml" data="{% static '' %}">
+      </object>
+        <img src="{% static 'login/CAMINHAO.svg' %}" class="left-login-image" alt="Logo animação" />
+
     </div>
     <div>
       <form action="{% url 'login' %}" method="POST">
@@ -29,7 +32,7 @@
             <div class="textfield">
               <label for="senha">Senha</label>
               <input type="password" name="senha" placeholder="Senha" />
-              <button class="btn-login">Login</button>
+              <a class="btn-login" href="/auth/home">Login</a>
             </div>
           </div>
         </div>

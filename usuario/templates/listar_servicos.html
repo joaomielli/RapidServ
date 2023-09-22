@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar Serviços</title>
+</head>
+<body>
+    <h1>Listar Serviços</h1>
+    <ul>
+        {% for servico in servicos %}
+            <li>{{ servico.nome }} - {{ servico.descricao }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'criar_servico' %}">Criar Serviço</a>
+</body>
+</html>

@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as login_django
 from django.contrib.auth.decorators import login_required
-
+from .forms import ServicoForm 
+from .models import Servico
 
 def cadastro(request):
     if request.method == "GET":
@@ -44,6 +45,25 @@ def login(request):
             return HttpResponse("Email ou senha inválidos")
 
 
+def home(request):
+    return render(request, 'home.html')
+
+def criar_servico(request):
+    if request.method == 'POST':
+        form = ServicoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render('listar_servicos')
+    else:
+        form = ServicoForm()
+    return render(request, 'criar_servico.html', {'form': form})
+
 @login_required(login_url="/auth/login/")
-def buscar_servicos(request):
-    return HttpResponse("Buscar Serviços")
+def listar_servicos(request):
+    servicos = Servico.objects.all()
+    return render(request, 'listar_servicos.html', {'servicos': servicos})
+
+@login_required(login_url="/auth/login/")
+def perfil(request):
+    usuario = request.user
+    return render(request, 'perfil.html', {'usuario': usuario})

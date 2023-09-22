@@ -1,26 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro</title>
-  </head>
-
-  <body>
-    <form action="{% url 'cadastro' %}" method="POST">
-      {% csrf_token %}
-      <input type="text" placeholder="Username..." name="username" />
-      <br />
-      <br />
-      <input type="email" placeholder="Email..." name="email" />
-      <br />
-      <br />
-      <input type="password" placeholder="Senha..." name="senha" />
-      <br />
-      <br />
-      <input type="submit" value="Cadastrar">
-      <br />
-      <br />
-    </form>
-  </body>
-</html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cadastro/cadastro.css' %}">
+    <title>Register</title>
+</head>
+<body>
+    <div class="main-register">
+        <div class="left-register">
+            <h1>Transforme seus sonhos em realidade</h1>
+        </div>
+        <header>
+            <nav class="navegation">
+                <ul>
+                    <li><a href="/auth/home">Home</a></li>
+                    <li><a href="/auth/login">Login</a>></li>
+                </ul>
+            </nav>
+            </header>
+        <div class="right-register">
+            <form class="card-register"action="{% url 'cadastro' %}" method="POST">
+                <h1>REGISTRE-SE</h1>
+                <div class="textfield">
+                    <label for="usuario">Nome de Usuário</label>
+                    <input type="text" name="usuario" placeholder="Usuário">
+                </div>
+                <div class="textfield">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" placeholder="E-mail">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" placeholder="Senha">
+                </div>
+                <a class="btn-login" href="/auth/home">Login</a>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
