@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'cadastro/cadastro.css' %}">
+    <link rel="stylesheet" href="{% static 'cadastro/css/cadastro.css' %}">
     <title>Register</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
             </nav>
             </header>
         <div class="right-register">
-            <form class="card-register"action="{% url 'cadastro' %}" method="POST">
+            <form class="card-register"action="{% url 'cadastro' %}" method="POST"> {% csrf_token %}
                 <h1>REGISTRE-SE</h1>
                 <div class="textfield">
                     <label for="usuario">Nome de Usuário</label>
@@ -35,7 +35,7 @@
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" placeholder="Senha">
                 </div>
-                <a class="btn-login" href="/auth/home">Login</a>
+                <input type="submit" value="Cadastro" class="btn-register" />
             </form>
         </div>
     </div>

@@ -1,184 +1,182 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-body *{
-    box-sizing: border-box;
+body * {
+  box-sizing: border-box;
 }
 
-.main-login{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    background: #121212;
-    justify-content: center;
-    align-items: center;
+.main-login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: #191919fc;
+  justify-content: center;
+  align-items: center;
 }
 
-.left-login{
-    width: 50vw;
-    height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.left-login {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left-login > h1 {
+  font-size: 3vw;
+  color: #e51e2a;
+}
+
+.left-login-image {
+  width: 35vw;
+}
+
+.right-login > h1 {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-login {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 100px;
+  background: #121212;
+  border-radius: 20px;
+  box-shadow: 0px 2px 10px #e51e2a;
+}
+
+.card-login > h1 {
+  color: #fff;
+  font-weight: 800;
+  margin: 0;
+}
+
+.textfield {
+  width: 120%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.textfield > input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #ffffffff;
+  color: #000000;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #121212;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.textfield > label {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.textfield > input::placeholder {
+  color: #00000079;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #e51e2a;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -12px #e51e2a;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-login {
     flex-direction: column;
-
-}
-
-.left-login >h1 {
-    font-size: 3vw;
-    color: #e51e2a;
-}
-
-.left-login-image{
-    width: 35vw;
-}
-
-.right-login >h1 {
-    width: 50vw;
-    height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-login{
-    width: 75%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 50px 100px;
-    background: #121212;
-    border-radius: 20px;
-    box-shadow: 0px 2px 10px #e51e2a;
-}
-
-.card-login > h1{
-    color: #fff;
-    font-weight: 800;
-    margin: 0;
-}
-
-.textfield{
-    width: 120%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;    
-    margin: 10px 0px;
-}
-
-.textfield > input{
+  }
+  .left-login > h1 {
+    display: none;
+  }
+  .left-login {
     width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    background: #FFFFFFFF;
-    color: #000000;
-    font-size: 12pt;
-    box-shadow: 0px 10px 40px #121212;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.textfield > label{
-    color: #FFFFFF;
-    margin-bottom: 10px;
-
-}
-
-.textfield > input::placeholder{
-    color: #00000079;
-} 
-
-.btn-login{
+    height: auto;
+  }
+  .right-login {
     width: 100%;
-    padding: 16px 0px;
-    margin: 25px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 4px;
-    color: #e51e2a;
-    background: #fff;
-    cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #e51e2a;
+    height: auto;
+  }
+  .left-login-image {
+    width: 150vw;
+  }
+  .card-login {
+    width: 90%;
+  }
 }
 
-@media only screen and (max-width: 600px){
-    .main-login{
-        flex-direction: column;
-    }
-    .left-login > h1{
-        display: none;
-    }
-    .left-login{
-        width: 100%;
-        height: auto;
-    }
-    .right-login{
-        width: 100%;
-        height: auto;
-    }
-    .left-login-image{
-        width: 150vw;
-    }
-    .card-login{
-        width: 90%;
-    }
+header .navegation ul {
+  position: relative;
+  display: flex;
 }
 
-header .navegation ul{
-    position: relative;
-    display: flex;
+header .navegation li {
+  position: relative;
+  display: flex;
 }
 
-header .navegation li{
-    list-style: none;
-}
+header .navegation li a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+  height: 10%;
+  width: 10%;
 
-header .navegation li a{
-    display: inline-block;
-    color: #fff;
-    font-weight: 500;
-
-    text-decoration: none;
-    font-size: 13px;
-    margin-left: 20px;
-    height: 100vh;
-
-.content{
+  .content {
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.content .text{
+  }
+  .content .text {
     position: relative;
     max-width: 600px;
     margin-right: 1000px;
-}
-.content .text h2{
+  }
+  .content .text h2 {
     color: #fff;
     font-size: 3em;
     margin-bottom: 10px;
     line-height: 2.5em;
     font-weight: 700;
-}
-.content .text h2 span{
+  }
+  .content .text h2 span {
     font-size: 3.5em;
     color: #e51e2a;
-}
-.content .text p{
+  }
+  .content .text p {
     color: #fff;
-}
-.content .text a{
+  }
+  .content .text a {
     display: inline-block;
     margin-top: 50px;
     padding: 10px 25px;
@@ -189,9 +187,8 @@ header .navegation li a{
     text-decoration: none;
     border-radius: 40px;
     transition: 0.3s ease-in-out;
-}
-.content .text a:hover{
+  }
+  .content .text a:hover {
     transform: translateY(-10px);
-}
-
+  }
 }
