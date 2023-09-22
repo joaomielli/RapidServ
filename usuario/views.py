@@ -12,7 +12,7 @@ def cadastro(request):
     if request.method == "GET":
         return render(request, "cadastro.html")
     else:
-        username = request.POST.get("username")
+        username = request.POST.get("usuario")
         email = request.POST.get("email")
         senha = request.POST.get("senha")
 
@@ -26,7 +26,7 @@ def cadastro(request):
         )
         usuario.save()
 
-        return HttpResponse(f"Usuário:{username} cadastrado com sucesso")
+        return render(request, 'home.html', {'exibir_popup': True})
 
 
 def login(request):
@@ -40,7 +40,7 @@ def login(request):
 
         if usuario:
             login_django(request, usuario)
-            return HttpResponse("autenticado")
+            return render(request, "home.html")
         else:
             return HttpResponse("Email ou senha inválidos")
 

@@ -35,7 +35,40 @@
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" placeholder="Senha">
                 </div>
-                <input type="submit" value="Cadastro" class="btn-register" />
+                <input type="submit" value="Cadastro" class="btn-register" id="cadastroButton">
+
+    <!-- O modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <p>Cadastro realizado com sucesso!</p>
+        </div>
+    </div>
+
+    <script>
+        // Obtém uma referência para o botão de Cadastro
+        var cadastroButton = document.getElementById("cadastroButton");
+
+        // Obtém uma referência para o modal
+        var modal = document.getElementById("myModal");
+
+        // Obtém uma referência para o botão de fechar o modal
+        var closeModal = document.getElementById("closeModal");
+
+        // Adiciona um ouvinte de eventos de clique ao botão
+        cadastroButton.addEventListener("click", function() {
+            // Mostra o modal
+            modal.style.display = "block";
+        });
+
+        // Adiciona um ouvinte de eventos de clique ao botão de fechar o modal
+        closeModal.addEventListener("click", function() {
+            // Esconde o modal
+            modal.style.display = "none";
+            // Redireciona para a página desejada (substitua pela URL desejada)
+            window.location.href = "/auth/home";
+        });
+    </script>
             </form>
         </div>
     </div>
