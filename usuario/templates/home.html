@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../../static/home/home.css"> -->
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+    <title>Landing-Page</title>
+</head>
+<body>
+    <section>
+        <div class="circle" style="color: red;">
+            aaaaaaa
+        </div>
+            
+        <header>
+            <a href="#"><img src="img/logo.png" alt="" class="logo"></a>
+            <nav class="navegation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/auth/cadastro">Inscrever-se</a></li>
+                    <li><a href="/auth/login">Login</a></li>
+                    <li><a href="/auth/perfil">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>   
+        <div class="content">
+            <div class="text">
+                <h2>O MELHOR <br><span>PARA O SEU SERVIÇO</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores autem eaque voluptas accusamus, illum, quisquam distinctio adipisci iusto earum corrupti soluta tenetur voluptatibus aperiam saepe vitae architecto eligendi repellendus delectus?</p>
+                <a href="/auth/listar_servicos/">Procure serviços ou crie o seu!</a>
+            </div>
+        </div>
+        <ul class="icons">
+            <li><a href="#"><img src="img/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="img/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="img/instagram.png" alt=""></a></li>
+        </ul>
+        <div class="boxImg">
+        </div>
+    </section>
+</body>
+</html>

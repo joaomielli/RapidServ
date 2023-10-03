@@ -12,7 +12,7 @@ body * {
   width: 100vw;
   height: 100vh;
   display: flex;
-  background: #121212;
+  background: #191919fc;
   justify-content: center;
   align-items: center;
 }
@@ -137,18 +137,18 @@ header .navegation ul {
 }
 
 header .navegation li {
-  list-style: none;
+  position: relative;
+  display: flex;
 }
 
 header .navegation li a {
-  display: inline-block;
   color: #fff;
-  font-weight: 500;
-
   text-decoration: none;
-  font-size: 13px;
-  margin-left: 20px;
-  height: 100vh;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+  height: 10%;
+  width: 10%;
 
   .content {
     position: relative;

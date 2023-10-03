@@ -6,36 +6,46 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'login/css/login.css' %}" />
+  <link rel="stylesheet" href="{% static '/login/css/login.css' %}" />
   <title>Login</title>
 </head>
 
 <body>
   <div class="main-login">
-    <div class="left-login">
-      <h1>Faça login<br />Conecte seus talentos</h1>
-      <img src="{% static 'usuario/img/CAMINHAO.svg' %}" class="left-login-image" alt="Logo animação" />
-    </div>
-    <div>
-      <form action="{% url 'login' %}" method="POST">
-        {% csrf_token %}
-        <div class="right-login">
+    <header>
+      <div class="navegation">
+        <ul>
+          <li><a href="/auth/home">Home</a></li>
+          <li><a href="/auth/cadastro">Cadastre-se</a></li>
+        </ul>
+      </div>
+      </header>
+      <div class="left-login">
+        <h1>Faça login<br />Conecte seus talentos</h1>
+        <objecttype="image svg+xml="" "="" data=" {% static '' %}">
+          <img src="{% static '/login/img/CAMINHAO.svg' %}" class="left-login-image" alt="Logo animação" />
+          </object="image>
+      </div>
+
+      <div class="right-login">
+        <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
           <div class="card-login">
+
             <h1>LOGIN</h1>
             <div class="textfield">
               <label for="usuario">Usuário</label>
               <input type="text" name="username" placeholder="Usuário" />
             </div>
+
             <div class="textfield">
               <label for="senha">Senha</label>
               <input type="password" name="senha" placeholder="Senha" />
-              <button class="btn-login">Login</button>
             </div>
+            <input type="submit" value="Login" class="btn-login" />
           </div>
-        </div>
-      </form>
-      <!-- </div> -->
-    </div>
+        </form>
+      </div>
+  </div>
 </body>
 
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuário</title>
+</head>
+<body>
+    <h1>Perfil de Usuário</h1>
+    <p><strong>Nome de Usuário:</strong> {{ usuario.username }}</p>
+    <p><strong>Email:</strong> {{ usuario.email }}</p>
+    <p><strong>Data de Registro:</strong> {{ usuario.date_joined }}</p>
+
+    <!-- Adicione mais informações do perfil conforme necessário -->
+
+    <a href="{% url 'editar_perfil' %}">Editar Perfil</a>
+</body>
+</html>

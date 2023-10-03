@@ -1,26 +1,77 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cadastro/css/cadastro.css' %}">
+    <title>Register</title>
+</head>
+<body>
+    <div class="main-register">
+        <div class="left-register">
+            <h1>Transforme seus sonhos em realidade</h1>
+        </div>
+        <header>
+            <nav class="navegation">
+                <ul>
+                    <li><a href="/auth/home">Home</a></li>
+                    <li><a href="/auth/login">Login</a>></li>
+                </ul>
+            </nav>
+            </header>
+        <div class="right-register">
+            <form class="card-register"action="{% url 'cadastro' %}" method="POST"> {% csrf_token %}
+                <h1>REGISTRE-SE</h1>
+                <div class="textfield">
+                    <label for="usuario">Nome de Usuário</label>
+                    <input type="text" name="usuario" placeholder="Usuário">
+                </div>
+                <div class="textfield">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" placeholder="E-mail">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" placeholder="Senha">
+                </div>
+                <input type="submit" value="Cadastro" class="btn-register" id="cadastroButton">
 
-  <body>
-    <form action="{% url 'cadastro' %}" method="POST">
-      {% csrf_token %}
-      <input type="text" placeholder="Username..." name="username" />
-      <br />
-      <br />
-      <input type="email" placeholder="Email..." name="email" />
-      <br />
-      <br />
-      <input type="password" placeholder="Senha..." name="senha" />
-      <br />
-      <br />
-      <input type="submit" value="Cadastrar">
-      <br />
-      <br />
-    </form>
-  </body>
-</html
+    <!-- O modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <p>Cadastro realizado com sucesso!</p>
+        </div>
+    </div>
+
+    <script>
+        // Obtém uma referência para o botão de Cadastro
+        var cadastroButton = document.getElementById("cadastroButton");
+
+        // Obtém uma referência para o modal
+        var modal = document.getElementById("myModal");
+
+        // Obtém uma referência para o botão de fechar o modal
+        var closeModal = document.getElementById("closeModal");
+
+        // Adiciona um ouvinte de eventos de clique ao botão
+        cadastroButton.addEventListener("click", function() {
+            // Mostra o modal
+            modal.style.display = "block";
+        });
+
+        // Adiciona um ouvinte de eventos de clique ao botão de fechar o modal
+        closeModal.addEventListener("click", function() {
+            // Esconde o modal
+            modal.style.display = "none";
+            // Redireciona para a página desejada (substitua pela URL desejada)
+            window.location.href = "/auth/home";
+        });
+    </script>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
